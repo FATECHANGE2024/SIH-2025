@@ -1,5 +1,6 @@
 import React from "react";
 import { CheckCircle, Clock, Circle } from "lucide-react";
+import ClaimNav from "@/claimComponents/ClaimNav";
 
 const ClaimDetails = () => {
   const claim = {
@@ -40,10 +41,13 @@ const ClaimDetails = () => {
     ],
   };
 
-  // Count how many steps are done
+  
   const completedSteps = claim.steps.filter((s) => s.status === "done").length;
 
   return (
+    <>
+      <ClaimNav />
+      
     <div className="max-w-3xl mx-auto bg-white shadow rounded-lg p-6">
       
       <div className="flex justify-between items-center mb-6">
@@ -51,18 +55,23 @@ const ClaimDetails = () => {
         <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">
           {claim.status}
         </span>
+        
       </div>
+     
 
       
-      <div className="mb-6">
+      <div className="mb-6 md:flex justify-around">
         <p>
-          <span className="font-semibold">Claim ID:</span>{" "}
-          <span className="text-gray-700">{claim.id}</span>
+          <span className="font-semibold md:text-lg text-xs text-gray-500">Claim ID:</span>{" "}
+          <span className="text-green-700">{claim.id}</span>
         </p>
         <p>
-          <span className="font-semibold">Applicant Name:</span>{" "}
-          <span className="text-gray-700">{claim.applicant}</span>
+          <span className="font-semibold md:text-lg text-xs text-gray-500">Applicant Name:</span>{" "}
+          <span className="text-green-700">{claim.applicant}</span>
         </p>
+        <select className="border border-gray-300 rounded px-2 py-1 text-sm">
+          <option>View Details</option>
+        </select>
       </div>
 
       
@@ -84,13 +93,13 @@ const ClaimDetails = () => {
             
             <div className="absolute -left-1.5 mt-2">
               {step.status === "done" && (
-                <CheckCircle className="text-green-500 w-5 h-5" />
+                <CheckCircle className="text-white font-bold bg-green-600 rounded-2xl w-6 h-6" />
               )}
               {step.status === "current" && (
-                <Clock className="text-orange-500 w-5 h-5" />
+                <Clock className="text-white bg-orange-400 rounded-2xl w-6 h-6" />
               )}
               {step.status === "pending" && (
-                <Circle className="text-gray-400 w-5 h-5" />
+                <Circle className="text-white bg-gray-400 rounded-2xl w-6 h-6" />
               )}
             </div>
 
@@ -122,6 +131,7 @@ const ClaimDetails = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 
