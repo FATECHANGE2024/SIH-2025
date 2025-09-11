@@ -45,7 +45,7 @@ const ClaimDetails = () => {
   const completedSteps = claim.steps.filter((s) => s.status === "done").length;
 
   return (
-    <>
+    <div>
       <ClaimNav />
       
     <div className="max-w-3xl mx-auto bg-white shadow rounded-lg p-6">
@@ -131,7 +131,7 @@ const ClaimDetails = () => {
         </p>
       </div>
     </div>
-    </>
+    </div>
   );
 };
 

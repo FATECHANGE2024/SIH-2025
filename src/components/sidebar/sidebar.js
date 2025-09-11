@@ -49,7 +49,7 @@ export default function Sidebar({ lang }) {
   ];
 
   return (
-    <aside className="w-64 bg-green-900 text-white flex flex-col justify-between h-full">
+    <aside className="w-64 bg-green-900 text-white flex flex-col justify-between h-full ">
       
       <div className="p-6 font-bold text-xl">Vanadhikar Atlas</div>
 

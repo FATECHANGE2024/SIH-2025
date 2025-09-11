@@ -15,7 +15,7 @@ export default function DSSRecommendation({ lang }) {
   const t = translations[lang];
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow">
+    <div className="bg-white px-4 py-6 rounded-lg shadow h-50 ">
       <h3 className="text-sm font-medium text-orange-600">{t.title}</h3>
       <p className="text-gray-700 mt-2">{t.text}</p>
       <span className="text-xs text-gray-400">{t.updated}</span>

@@ -25,10 +25,10 @@ export default function ClaimsDistributionChart({ lang, title }) {
   ];
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow">
-      <h3 className="text-sm font-medium text-gray-600 mb-2">{title}</h3>
-      <PieChart width={200} height={200}>
-        <Pie data={localizedData} cx="50%" cy="50%" outerRadius={70} dataKey="value">
+    <div className="bg-white p-1.5 rounded-lg shadow ">
+      <h3 className="text-sm font-medium text-gray-600 ">{title}</h3>
+      <PieChart width={195} height={195}>
+        <Pie data={localizedData} cx="50%" cy="50%" outerRadius={55} dataKey="value">
           {localizedData.map((entry, idx) => (
             <Cell key={`cell-${idx}`} fill={COLORS[idx % COLORS.length]} />
           ))}
@@ -37,5 +37,6 @@ export default function ClaimsDistributionChart({ lang, title }) {
         <Legend />
       </PieChart>
     </div>
+
   );
 }

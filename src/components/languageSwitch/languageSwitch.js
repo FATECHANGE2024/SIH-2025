@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 export default function LanguageSwitcher({ onChange }) {
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState("hi");
 
   const handleChange = (e) => {
     const newLang = e.target.value;
